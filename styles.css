@@ -228,3 +228,305 @@ body {
     display: none;
   }
 }
+
+/* Dashboard page styles */
+.page-dashboard .dashboard-wrap {
+  padding: 14px 20px;
+  overflow: auto;
+  flex: 1;
+  background: #f6f8fc;
+}
+
+.page-dashboard .kpi-card {
+  border: 1px solid var(--erp-border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px;
+  height: 100%;
+}
+
+.page-dashboard .kpi-label {
+  font-size: .78rem;
+  color: #5b6f8f;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 4px;
+}
+
+.page-dashboard .kpi-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a335f;
+  line-height: 1.2;
+}
+
+.page-dashboard .kpi-trend {
+  font-size: .76rem;
+  margin-top: 4px;
+}
+
+.page-dashboard .panel-card {
+  border: 1px solid var(--erp-border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  height: 100%;
+}
+
+.page-dashboard .panel-title {
+  font-size: .86rem;
+  font-weight: 700;
+  color: #2c446f;
+  margin-bottom: 10px;
+}
+
+.page-dashboard .mini-bar {
+  height: 8px;
+  background: #e9eff8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.page-dashboard .mini-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #2b7bff, #4dbd78);
+  border-radius: 999px;
+}
+
+.page-dashboard .quick-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid #d7e2f1;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #1f3a67;
+  font-weight: 600;
+  font-size: .84rem;
+  background: #fbfdff;
+}
+
+.page-dashboard .quick-link:hover {
+  background: #eef4ff;
+  border-color: #c4d5ef;
+}
+
+.page-dashboard .chart-bars {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+  height: 170px;
+  padding: 8px;
+  border: 1px solid #dbe4f2;
+  border-radius: 6px;
+  background: linear-gradient(to top, #f2f7ff, #ffffff);
+}
+
+.page-dashboard .chart-bar {
+  background: linear-gradient(180deg, #3f8efc, #2459a8);
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+
+.page-dashboard .chart-bar span {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .72rem;
+  color: #506587;
+  white-space: nowrap;
+}
+
+.page-dashboard .small-table th,
+.page-dashboard .small-table td {
+  font-size: .8rem;
+  padding: .42rem .45rem;
+}
+
+/* Material form page styles */
+.page-form .form-main {
+  background: #f6f8fc;
+}
+
+.page-form .form-toolbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--erp-border);
+  padding: 10px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-form .form-toolbar .label-chip {
+  background: #eaf0fb;
+  color: #183f78;
+  border: 1px solid #ccdaef;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.page-form .material-form {
+  padding: 10px 14px;
+  overflow: auto;
+  flex: 1;
+}
+
+.page-form .form-card {
+  background: #fff;
+  border: 1px solid var(--erp-border);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.page-form .form-label {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+  color: #1f3559;
+  font-weight: 600;
+}
+
+.page-form .form-control,
+.page-form .form-select {
+  font-size: 0.82rem;
+  min-height: 30px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.page-form .tab-pane .grid-row {
+  margin-bottom: 8px;
+}
+
+.page-form .sub-panel {
+  border: 1px solid var(--erp-border);
+  border-radius: 4px;
+  padding: 8px;
+  background: #fbfcff;
+  height: 100%;
+}
+
+.page-form .small-heading {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #2b446f;
+  margin-bottom: 6px;
+}
+
+.page-form .table-sm td,
+.page-form .table-sm th {
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.page-form .nav-tabs .nav-link {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+/* Login page styles */
+.page-login {
+  --login-bg: #eaf0f8;
+  --card-bg: #ffffff;
+  --brand-blue: #204b86;
+  --soft-border: #d8e1ef;
+  --soft-text: #5f7392;
+}
+
+body.page-login {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(62, 130, 255, 0.14), transparent 36%),
+    radial-gradient(circle at 80% 80%, rgba(29, 180, 130, 0.12), transparent 34%),
+    var(--login-bg);
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: #173159;
+  padding: 16px;
+  overflow: auto;
+}
+
+.page-login .login-card {
+  width: min(460px, 100%);
+  background: var(--card-bg);
+  border: 1px solid var(--soft-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(22, 50, 96, 0.14);
+  overflow: hidden;
+}
+
+.page-login .login-head {
+  background: linear-gradient(135deg, #214a86, #2e66ad);
+  color: #fff;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-login .login-head i {
+  font-size: 1.4rem;
+}
+
+.page-login .login-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.page-login .login-sub {
+  margin: 0;
+  font-size: .78rem;
+  opacity: .92;
+}
+
+.page-login .login-body {
+  padding: 20px 22px 16px;
+}
+
+.page-login .form-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: #223f6c;
+  margin-bottom: 4px;
+}
+
+.page-login .form-control,
+.page-login .input-group-text,
+.page-login .btn {
+  font-size: .85rem;
+  min-height: 36px;
+}
+
+.page-login .optional-zone {
+  border-top: 1px dashed #cfdaec;
+  margin-top: 10px;
+  padding-top: 12px;
+}
+
+.page-login .captcha-box {
+  height: 36px;
+  border: 1px dashed #a9bddc;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f9ff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--brand-blue);
+  user-select: none;
+}
+
+.page-login .helper-line {
+  color: var(--soft-text);
+  font-size: .76rem;
+}
