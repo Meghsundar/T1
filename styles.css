@@ -1,0 +1,229 @@
+:root {
+  --erp-bg: #e8edf4;
+  --erp-card: #ffffff;
+  --erp-sidebar: #183f78;
+  --erp-sidebar-hover: #24508f;
+  --erp-active: #2f9d53;
+  --erp-status: #1e467e;
+  --erp-border: #d6deea;
+  --erp-text-soft: #6b7a90;
+  --sidebar-open: 280px;
+  --sidebar-closed: 86px;
+  --status-height: 56px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--erp-bg);
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: #12294d;
+  overflow: hidden;
+}
+
+.erp-shell {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--erp-card);
+  display: grid;
+  grid-template-columns: var(--sidebar-open) 1fr;
+  grid-template-rows: 1fr var(--status-height);
+  transition: grid-template-columns .22s ease;
+}
+
+.erp-shell.sidebar-collapsed {
+  grid-template-columns: var(--sidebar-closed) 1fr;
+}
+
+.erp-sidebar {
+  grid-row: 1 / span 2;
+  background: var(--erp-sidebar);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.brand {
+  height: 78px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: .2px;
+  flex-shrink: 0;
+}
+
+.brand .brand-name,
+.menu-text,
+.toggle-label {
+  white-space: nowrap;
+  transition: opacity .12s ease;
+}
+
+.menu-wrap {
+  padding-top: 14px;
+  flex: 1;
+  overflow: auto;
+}
+
+.menu-link {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.96);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  transition: background-color .16s ease;
+}
+
+.menu-link:hover { background: var(--erp-sidebar-hover); }
+.menu-link.active { background: var(--erp-active); }
+
+.menu-link i {
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle {
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  height: 68px;
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover { background: var(--erp-sidebar-hover); }
+
+.erp-main {
+  background: #f2f5fa;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content-header {
+  background: #fff;
+  border-bottom: 1px solid var(--erp-border);
+  padding: 28px 38px 20px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.content-header .sub {
+  color: var(--erp-text-soft);
+  font-weight: 500;
+  margin-left: 8px;
+  font-size: .9em;
+}
+
+.content-body {
+  padding: 24px 38px;
+  overflow: auto;
+  flex: 1;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-panel {
+  background: #fff;
+  border: 1px solid var(--erp-border);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.table thead th {
+  background: #edf2f8;
+  color: #1a335f;
+}
+
+.status-bar {
+  grid-column: 2;
+  background: var(--erp-status);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 0 18px;
+  font-size: 1.05rem;
+  gap: 18px;
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+.status-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  padding-left: 18px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #90d046;
+  display: inline-block;
+}
+
+.sidebar-collapsed .brand,
+.sidebar-collapsed .menu-link,
+.sidebar-collapsed .sidebar-toggle {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar-collapsed .brand .brand-name,
+.sidebar-collapsed .menu-text,
+.sidebar-collapsed .toggle-label {
+  display: none;
+  opacity: 0;
+}
+
+@media (max-width: 992px) {
+  .content-header,
+  .content-body { padding-left: 20px; padding-right: 20px; }
+
+  .status-left span:nth-child(2),
+  .status-left span:nth-child(4) {
+    display: none;
+  }
+}
