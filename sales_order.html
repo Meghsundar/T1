@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharma ERP - Sales Order</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-sales">
+  <div class="erp-shell" id="erpShell">
+    <aside class="erp-sidebar">
+      <div class="brand">
+        <i class="bi bi-capsule-pill"></i>
+        <span class="brand-name">Pharma ERP</span>
+      </div>
+
+      <nav class="menu-wrap">
+        <button class="menu-link"><i class="bi bi-speedometer2"></i><span class="menu-text">Dashboard</span></button>
+        <button class="menu-link"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <button class="menu-link"><i class="bi bi-clipboard2-pulse"></i><span class="menu-text">Quality Control</span></button>
+        <button class="menu-link"><i class="bi bi-shield-check"></i><span class="menu-text">Quality Assurance</span></button>
+        <button class="menu-link active"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <button class="menu-link"><i class="bi bi-truck"></i><span class="menu-text">Distribution</span></button>
+        <button class="menu-link"><i class="bi bi-cash-stack"></i><span class="menu-text">Accounts</span></button>
+        <button class="menu-link"><i class="bi bi-people"></i><span class="menu-text">CRM / Clients</span></button>
+        <button class="menu-link"><i class="bi bi-sliders"></i><span class="menu-text">Settings</span></button>
+      </nav>
+
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" title="Collapse / expand menu">
+        <i class="bi bi-arrow-left"></i>
+        <span class="toggle-label">Collapse</span>
+      </button>
+    </aside>
+
+    <main class="erp-main sales-main">
+      <div class="content-header d-flex justify-content-between align-items-center">
+        <div>Sales Order <span class="sub">/ Create Invoice</span></div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-printer"></i> Print Draft</button>
+          <button class="btn btn-success btn-sm"><i class="bi bi-check2-circle"></i> Save Order</button>
+        </div>
+      </div>
+
+      <div class="sales-wrap">
+        <div class="sales-panel">
+          <div class="sales-section-title">Order Header</div>
+          <div class="row g-2">
+            <div class="col-md-2"><label class="form-label">Order No. *</label><input class="form-control form-control-sm" value="SO-2026-0032" /></div>
+            <div class="col-md-2"><label class="form-label">Order Date *</label><input type="date" class="form-control form-control-sm" value="2026-03-27" /></div>
+            <div class="col-md-2"><label class="form-label">Invoice Type *</label><select class="form-select form-select-sm"><option>Tax Invoice</option></select></div>
+            <div class="col-md-3"><label class="form-label">Customer Name *</label><input class="form-control form-control-sm" value="Sunrise Med Distributors" /></div>
+            <div class="col-md-3"><label class="form-label">Customer GSTIN *</label><input class="form-control form-control-sm" value="24AAICS1234K1Z9" /></div>
+
+            <div class="col-md-3"><label class="form-label">Drug License No. *</label><input class="form-control form-control-sm" value="DL-220B-98542" /></div>
+            <div class="col-md-3"><label class="form-label">Ship To Address *</label><input class="form-control form-control-sm" value="Ahmedabad Warehouse" /></div>
+            <div class="col-md-2"><label class="form-label">State Code *</label><input class="form-control form-control-sm" value="24" /></div>
+            <div class="col-md-2"><label class="form-label">Payment Terms *</label><select class="form-select form-select-sm"><option>30 Days</option></select></div>
+            <div class="col-md-2"><label class="form-label">Sales Person</label><input class="form-control form-control-sm" value="M. Patel" /></div>
+          </div>
+        </div>
+
+        <div class="sales-panel">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="sales-section-title mb-0">Order Items (Pharma Batch Control)</div>
+            <button class="btn btn-outline-primary btn-sm"><i class="bi bi-plus-lg"></i> Add Line</button>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm mb-0 sales-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Product *</th>
+                  <th>HSN *</th>
+                  <th>Batch No. *</th>
+                  <th>MFG Date</th>
+                  <th>Expiry Date *</th>
+                  <th>Qty *</th>
+                  <th>UOM *</th>
+                  <th>Rate *</th>
+                  <th>Disc%</th>
+                  <th>GST% *</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td><td>Paracetamol 500mg Tab</td><td>3004</td><td>PCM2401A</td><td>2025-10-01</td><td>2027-09-30</td><td>1200</td><td>Strip</td><td>12.50</td><td>2</td><td>12</td><td>14,700.00</td>
+                </tr>
+                <tr>
+                  <td>2</td><td>Amoxicillin 250mg Cap</td><td>3003</td><td>AMX2412B</td><td>2025-12-15</td><td>2027-12-14</td><td>800</td><td>Box</td><td>28.00</td><td>3</td><td>12</td><td>21,728.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-lg-8">
+            <div class="sales-panel h-100">
+              <div class="sales-section-title">Compliance & Dispatch Details</div>
+              <div class="row g-2">
+                <div class="col-md-4"><label class="form-label">Prescription Ref No.</label><input class="form-control form-control-sm" placeholder="If applicable" /></div>
+                <div class="col-md-4"><label class="form-label">Cold Chain Required *</label><select class="form-select form-select-sm"><option>No</option><option>Yes</option></select></div>
+                <div class="col-md-4"><label class="form-label">Narcotic / Schedule Type *</label><select class="form-select form-select-sm"><option>Non-Schedule</option></select></div>
+                <div class="col-md-4"><label class="form-label">Transporter *</label><input class="form-control form-control-sm" value="SafeTrans Logistics" /></div>
+                <div class="col-md-4"><label class="form-label">Vehicle No.</label><input class="form-control form-control-sm" value="GJ01AB1234" /></div>
+                <div class="col-md-4"><label class="form-label">E-Way Bill No.</label><input class="form-control form-control-sm" placeholder="Optional" /></div>
+                <div class="col-12"><label class="form-label">Remarks</label><textarea class="form-control form-control-sm" rows="2" placeholder="Special instructions / regulatory notes"></textarea></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="sales-panel h-100">
+              <div class="sales-section-title">Totals</div>
+              <div class="totals-grid">
+                <div>Taxable Value</div><div class="text-end">36,428.00</div>
+                <div>CGST</div><div class="text-end">2,185.68</div>
+                <div>SGST</div><div class="text-end">2,185.68</div>
+                <div>Round Off</div><div class="text-end">0.64</div>
+                <div class="fw-bold">Grand Total</div><div class="text-end fw-bold">40,800.00</div>
+              </div>
+              <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary btn-sm"><i class="bi bi-receipt"></i> Generate Invoice</button>
+                <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-envelope"></i> Share PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="status-bar">
+      <div class="status-left">
+        <span>Malay Bhalodiya</span>
+        <span>|</span>
+        <span>Role: Admin</span>
+        <span>|</span>
+        <span><span class="dot"></span> System Healthy</span>
+      </div>
+      <div class="status-right">
+        <i class="bi bi-gear-fill"></i>
+        <span>More</span>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const shell = document.getElementById('erpShell');
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      shell.classList.toggle('sidebar-collapsed');
+      const icon = toggleBtn.querySelector('i');
+      const label = toggleBtn.querySelector('.toggle-label');
+      const collapsed = shell.classList.contains('sidebar-collapsed');
+
+      icon.className = collapsed ? 'bi bi-arrow-right' : 'bi bi-arrow-left';
+      label.textContent = collapsed ? 'Expand' : 'Collapse';
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
