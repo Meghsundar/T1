@@ -530,3 +530,42 @@ body.page-login {
   color: var(--soft-text);
   font-size: .76rem;
 }
+
+/* Form2 simple entry page styles */
+.page-form2 .form2-main {
+  background: #f6f8fc;
+}
+
+.page-form2 .form2-wrap {
+  padding: 14px 20px;
+  overflow: auto;
+  flex: 1;
+}
+
+.page-form2 .form2-card {
+  background: #fff;
+  border: 1px solid var(--erp-border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.page-form2 .form2-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #274374;
+  margin-bottom: 8px;
+}
+
+.page-form2 .form-label {
+  font-size: 0.8rem;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: #29416a;
+}
+
+.page-form2 .form2-table th,
+.page-form2 .form2-table td {
+  font-size: 0.8rem;
+  padding: 0.45rem 0.5rem;
+}
