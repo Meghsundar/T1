@@ -26,10 +26,18 @@
 
       <nav class="menu-wrap">
         <button class="menu-link"><i class="bi bi-speedometer2"></i><span class="menu-text">Dashboard</span></button>
-        <button class="menu-link"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <button class="menu-link submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuProduction"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <div class="submenu-list collapse" id="submenuProduction">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Production Planning</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Batch Execution</span></button>
+        </div>
         <button class="menu-link"><i class="bi bi-clipboard2-pulse"></i><span class="menu-text">Quality Control</span></button>
         <button class="menu-link"><i class="bi bi-shield-check"></i><span class="menu-text">Quality Assurance</span></button>
-        <button class="menu-link active"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <button class="menu-link active submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuInventory"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <div class="submenu-list collapse show" id="submenuInventory">
+          <button class="submenu-link active"><i class="bi bi-dot"></i><span class="menu-text">Material Master</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Stock Ledger</span></button>
+        </div>
         <button class="menu-link"><i class="bi bi-truck"></i><span class="menu-text">Distribution</span></button>
         <button class="menu-link"><i class="bi bi-cash-stack"></i><span class="menu-text">Accounts</span></button>
         <button class="menu-link"><i class="bi bi-people"></i><span class="menu-text">CRM / Clients</span></button>
