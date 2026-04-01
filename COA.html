@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharma ERP - Certificate of Analysis</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-coa">
+  <div class="erp-shell" id="erpShell">
+    <aside class="erp-sidebar">
+      <div class="brand">
+        <i class="bi bi-capsule-pill"></i>
+        <span class="brand-name">Pharma ERP</span>
+      </div>
+
+      <nav class="menu-wrap">
+        <button class="menu-link"><i class="bi bi-speedometer2"></i><span class="menu-text">Dashboard</span></button>
+        <button class="menu-link submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuProduction"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <div class="submenu-list collapse" id="submenuProduction">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Production Planning</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Batch Creation</span></button>
+        </div>
+        <button class="menu-link active"><i class="bi bi-clipboard2-pulse"></i><span class="menu-text">Quality Control</span></button>
+        <button class="menu-link"><i class="bi bi-shield-check"></i><span class="menu-text">Quality Assurance</span></button>
+        <button class="menu-link submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuInventory"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <div class="submenu-list collapse show" id="submenuInventory">
+          <button class="submenu-link active"><i class="bi bi-dot"></i><span class="menu-text">Raw Material COA</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Packing Material COA</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-truck"></i><span class="menu-text">Distribution</span></button>
+        <button class="menu-link"><i class="bi bi-cash-stack"></i><span class="menu-text">Accounts</span></button>
+        <button class="menu-link"><i class="bi bi-people"></i><span class="menu-text">CRM / Clients</span></button>
+        <button class="menu-link"><i class="bi bi-sliders"></i><span class="menu-text">Settings</span></button>
+      </nav>
+
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" title="Collapse / expand menu">
+        <i class="bi bi-arrow-left"></i>
+        <span class="toggle-label">Collapse</span>
+      </button>
+    </aside>
+
+    <main class="erp-main coa-main">
+      <div class="content-header d-flex justify-content-between align-items-center">
+        <div>Certificate of Analysis <span class="sub">/ Raw & Packing Material Test Report</span></div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-printer"></i> Print COA</button>
+          <button class="btn btn-success btn-sm"><i class="bi bi-file-earmark-check"></i> Release</button>
+        </div>
+      </div>
+
+      <div class="coa-wrap">
+        <div class="coa-card">
+          <div class="row g-2">
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Location *</label><select class="form-select form-select-sm"><option>GENERAL</option></select></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Company *</label><select class="form-select form-select-sm"><option>SALVAVIDA</option></select></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Item Type *</label><select class="form-select form-select-sm"><option>Raw Material</option><option>Packing Material</option></select></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Department</label><select class="form-select form-select-sm"><option>QC</option></select></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Series *</label><input class="form-control form-control-sm" value="AR-26" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Report No.</label><input class="form-control form-control-sm" value="COA-AR-26014" /></div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6"><label class="form-label">Batch No. *</label><input class="form-control form-control-sm" value="API-B123" /></div>
+            <div class="col-xl-3 col-lg-4 col-md-6"><label class="form-label">Item Code</label><input class="form-control form-control-sm" value="API-001" /></div>
+            <div class="col-xl-3 col-lg-4 col-md-6"><label class="form-label">Material Name *</label><input class="form-control form-control-sm" value="Paracetamol API" /></div>
+            <div class="col-xl-3 col-lg-4 col-md-6"><label class="form-label">Mkt. By</label><input class="form-control form-control-sm" value="SALVAVIDA" /></div>
+
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Batch Size</label><input class="form-control form-control-sm" value="520" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Mfg Date</label><input type="date" class="form-control form-control-sm" value="2025-10-01" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Exp Date</label><input type="date" class="form-control form-control-sm" value="2027-09-30" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Best Before</label><input type="date" class="form-control form-control-sm" value="2027-09-30" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Test Slip No.</label><input class="form-control form-control-sm" value="TS-90211" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Date of T.R.</label><input type="date" class="form-control form-control-sm" value="2026-03-31" /></div>
+
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Rev No.</label><input class="form-control form-control-sm" value="0" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Test as per</label><input class="form-control form-control-sm" value="IP/BP" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Sample Qty.</label><input class="form-control form-control-sm" value="250 g" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">A.R. Series</label><input class="form-control form-control-sm" value="AR-26" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">A.R. No. *</label><input class="form-control form-control-sm" value="AR-26-014" /></div>
+            <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Retest Date</label><input type="date" class="form-control form-control-sm" value="2027-03-31" /></div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6"><label class="form-label">Packing Approval</label><input class="form-control form-control-sm" placeholder="If PM" /></div>
+            <div class="col-xl-3 col-lg-4 col-md-6"><label class="form-label">Reject / Release Date *</label><input type="date" class="form-control form-control-sm" value="2026-04-01" /></div>
+            <div class="col-xl-2 col-lg-4 col-md-6"><label class="form-label">Status *</label><select class="form-select form-select-sm"><option>Released</option><option>Rejected</option><option>Hold</option></select></div>
+            <div class="col-xl-2 col-lg-4 col-md-6"><label class="form-label">Release Qty. *</label><input class="form-control form-control-sm" value="520" /></div>
+            <div class="col-xl-2 col-lg-4 col-md-6"><label class="form-label">Release UOM</label><input class="form-control form-control-sm" value="Kg" /></div>
+
+            <div class="col-xl-8 col-lg-8 col-md-12"><label class="form-label">Reason / Remark</label><input class="form-control form-control-sm" value="All critical tests are within specification." /></div>
+            <div class="col-xl-4 col-lg-4 col-md-12"><label class="form-label">Approved By</label><input class="form-control form-control-sm" value="Dr. P. Patel" /></div>
+          </div>
+        </div>
+
+        <div class="coa-card">
+          <div class="coa-title">Test Results (Raw Material / Packing Material)</div>
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm mb-0 coa-table">
+              <thead>
+                <tr>
+                  <th>Test Name</th>
+                  <th>Result</th>
+                  <th>Specification / Limits</th>
+                  <th>Method</th>
+                  <th>Comply (Y/N)</th>
+                  <th>Analyst Code</th>
+                  <th>Test Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Description</option>
+                      <option>Assay</option>
+                      <option>Loss on Drying</option>
+                      <option>Related Substances</option>
+                      <option>Microbial Limit</option>
+                    </select>
+                  </td>
+                  <td><textarea class="form-control form-control-sm" rows="2">White crystalline powder</textarea></td>
+                  <td><textarea class="form-control form-control-sm" rows="2">White to off-white</textarea></td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Visual</option>
+                      <option>HPLC</option>
+                      <option>LOD</option>
+                      <option>Micro</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Y</option>
+                      <option>N</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>QC102</option>
+                      <option>QC211</option>
+                      <option>MB301</option>
+                    </select>
+                  </td>
+                  <td><input type="date" class="form-control form-control-sm" value="2026-03-30" /></td>
+                </tr>
+                <tr>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Assay</option>
+                      <option>Description</option>
+                      <option>Loss on Drying</option>
+                      <option>Related Substances</option>
+                      <option>Microbial Limit</option>
+                    </select>
+                  </td>
+                  <td><textarea class="form-control form-control-sm" rows="2">99.28%</textarea></td>
+                  <td><textarea class="form-control form-control-sm" rows="2">99.0% - 101.0%</textarea></td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>HPLC</option>
+                      <option>Visual</option>
+                      <option>LOD</option>
+                      <option>Micro</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Y</option>
+                      <option>N</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>QC102</option>
+                      <option>QC211</option>
+                      <option>MB301</option>
+                    </select>
+                  </td>
+                  <td><input type="date" class="form-control form-control-sm" value="2026-03-30" /></td>
+                </tr>
+                <tr>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Loss on Drying</option>
+                      <option>Description</option>
+                      <option>Assay</option>
+                      <option>Related Substances</option>
+                      <option>Microbial Limit</option>
+                    </select>
+                  </td>
+                  <td><textarea class="form-control form-control-sm" rows="2">0.32%</textarea></td>
+                  <td><textarea class="form-control form-control-sm" rows="2">NMT 0.5%</textarea></td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>LOD</option>
+                      <option>HPLC</option>
+                      <option>Visual</option>
+                      <option>Micro</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>Y</option>
+                      <option>N</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-select form-select-sm">
+                      <option>QC211</option>
+                      <option>QC102</option>
+                      <option>MB301</option>
+                    </select>
+                  </td>
+                  <td><input type="date" class="form-control form-control-sm" value="2026-03-30" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row g-2 mt-2">
+            <div class="col-md-3"><label class="form-label">Equipment</label><input class="form-control form-control-sm" value="HPLC-01" /></div>
+            <div class="col-md-3"><label class="form-label">Test For</label><input class="form-control form-control-sm" value="Raw Material" /></div>
+            <div class="col-md-2"><label class="form-label">Result in No.</label><input class="form-control form-control-sm" value="5/5" /></div>
+            <div class="col-md-2"><label class="form-label">Analyst Name</label><input class="form-control form-control-sm" value="R. Shah" /></div>
+            <div class="col-md-2"><label class="form-label">Additional Test</label><input class="form-control form-control-sm" placeholder="Optional" /></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="status-bar">
+      <div class="status-left">
+        <span>Malay Bhalodiya</span>
+        <span>|</span>
+        <span>Role: Admin</span>
+        <span>|</span>
+        <span><span class="dot"></span> System Healthy</span>
+      </div>
+      <div class="status-right">
+        <i class="bi bi-gear-fill"></i>
+        <span>More</span>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const shell = document.getElementById('erpShell');
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      shell.classList.toggle('sidebar-collapsed');
+      const icon = toggleBtn.querySelector('i');
+      const label = toggleBtn.querySelector('.toggle-label');
+      const collapsed = shell.classList.contains('sidebar-collapsed');
+
+      icon.className = collapsed ? 'bi bi-arrow-right' : 'bi bi-arrow-left';
+      label.textContent = collapsed ? 'Expand' : 'Collapse';
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

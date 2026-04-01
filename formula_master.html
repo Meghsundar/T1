@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharma ERP - Formula Master</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-formula">
+  <div class="erp-shell" id="erpShell">
+    <aside class="erp-sidebar">
+      <div class="brand">
+        <i class="bi bi-capsule-pill"></i>
+        <span class="brand-name">Pharma ERP</span>
+      </div>
+
+      <nav class="menu-wrap">
+        <button class="menu-link"><i class="bi bi-speedometer2"></i><span class="menu-text">Dashboard</span></button>
+        <button class="menu-link active submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuProduction"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <div class="submenu-list collapse show" id="submenuProduction">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Production Planning</span></button>
+          <button class="submenu-link active"><i class="bi bi-dot"></i><span class="menu-text">Formula Master</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-clipboard2-pulse"></i><span class="menu-text">Quality Control</span></button>
+        <button class="menu-link"><i class="bi bi-shield-check"></i><span class="menu-text">Quality Assurance</span></button>
+        <button class="menu-link submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuInventory"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <div class="submenu-list collapse" id="submenuInventory">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Raw Materials</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Finished Goods</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-truck"></i><span class="menu-text">Distribution</span></button>
+        <button class="menu-link"><i class="bi bi-cash-stack"></i><span class="menu-text">Accounts</span></button>
+        <button class="menu-link"><i class="bi bi-people"></i><span class="menu-text">CRM / Clients</span></button>
+        <button class="menu-link"><i class="bi bi-sliders"></i><span class="menu-text">Settings</span></button>
+      </nav>
+
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" title="Collapse / expand menu">
+        <i class="bi bi-arrow-left"></i>
+        <span class="toggle-label">Collapse</span>
+      </button>
+    </aside>
+
+    <main class="erp-main formula-main">
+      <div class="content-header d-flex justify-content-between align-items-center">
+        <div>Formula Master <span class="sub">/ Product & Process Definition</span></div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-files"></i> Copy From</button>
+          <button class="btn btn-success btn-sm"><i class="bi bi-check2-circle"></i> Save Formula</button>
+        </div>
+      </div>
+
+      <div class="formula-wrap">
+        <ul class="nav nav-tabs formula-tabs" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fDetails" type="button">Formula Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fMaster" type="button">Master Formula Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fTech" type="button">Technical Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fPermission" type="button">Product Permission</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fCharges" type="button">Batch Charges</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fPacking" type="button">Packing Details</button></li>
+        </ul>
+
+        <div class="tab-content formula-tab-content">
+          <div class="tab-pane fade show active" id="fDetails">
+            <div class="formula-card">
+              <div class="row g-2">
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Location *</label><select class="form-select form-select-sm"><option>GENERAL</option></select></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Make *</label><select class="form-select form-select-sm"><option>Inhouse</option></select></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Marketed By *</label><input class="form-control form-control-sm" value="SALVAVIDA" /></div>
+                <div class="col-xl-3 col-lg-6 col-md-8"><label class="form-label">Master Card No. *</label><input class="form-control form-control-sm" value="MFR/LV07/TRIM/00" /></div>
+                <div class="col-xl-1 col-lg-3 col-md-4"><label class="form-label">Revision</label><input class="form-control form-control-sm" value="0" /></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Version *</label><input class="form-control form-control-sm" value="000" /></div>
+
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Product Code *</label><input class="form-control form-control-sm" value="LV07SULP" /></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Item Type *</label><select class="form-select form-select-sm"><option>SF</option></select></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Dosage Form *</label><select class="form-select form-select-sm"><option>TABLET</option></select></div>
+                <div class="col-xl-4 col-lg-6 col-md-8"><label class="form-label">Product Name *</label><input class="form-control form-control-sm" value="CO-TRIMOXAZOLE TABLET 480 MG" /></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Obsolete</label><select class="form-select form-select-sm"><option>No</option><option>Yes</option></select></div>
+
+                <div class="col-xl-4 col-lg-6 col-md-8"><label class="form-label">Generic Name</label><input class="form-control form-control-sm" value="CO-TRIMOXAZOLE TABLETS BP 480MG" /></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Batch Size *</label><div class="input-group input-group-sm"><input class="form-control" value="400000" /><span class="input-group-text">Tab</span></div></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Label Claim UOM *</label><select class="form-select form-select-sm"><option>mg</option></select></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">Avg Batch Size</label><input class="form-control form-control-sm" value="400091" /></div>
+                <div class="col-xl-2 col-lg-3 col-md-4"><label class="form-label">QC Required All</label><select class="form-select form-select-sm"><option>Yes</option></select></div>
+              </div>
+            </div>
+
+            <div class="formula-card">
+              <div class="formula-title">Process Details</div>
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm mb-0 formula-table">
+                  <thead>
+                    <tr>
+                      <th>Sr.</th>
+                      <th>Process *</th>
+                      <th>Time (Min)</th>
+                      <th>In Qty.</th>
+                      <th>In UOM</th>
+                      <th>Out Qty.</th>
+                      <th>Out UOM</th>
+                      <th>Total Lot Size</th>
+                      <th>QC Req?</th>
+                      <th>Remark</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>Granulation</td><td>180</td><td>520</td><td>Kg</td><td>518</td><td>Kg</td><td>1</td><td>Yes</td><td>Critical hold point</td></tr>
+                    <tr><td>2</td><td>Compression</td><td>360</td><td>518</td><td>Kg</td><td>510</td><td>Kg</td><td>1</td><td>Yes</td><td>IPC every 30 mins</td></tr>
+                    <tr><td>3</td><td>Packing</td><td>420</td><td>400000</td><td>Tab</td><td>398800</td><td>Tab</td><td>1</td><td>No</td><td>Std blister line</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <ul class="nav nav-tabs formula-subtabs" role="tablist">
+              <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#matDetails" type="button">Material Details</button></li>
+              <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#byProduct" type="button">By-Product Details</button></li>
+              <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#equipDetails" type="button">Equipment Details</button></li>
+              <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ipcDetails" type="button">In Process Charges</button></li>
+            </ul>
+
+            <div class="tab-content formula-sub-content">
+              <div class="tab-pane fade show active" id="matDetails">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm mb-2 formula-table">
+                    <thead>
+                      <tr>
+                        <th>Item Type *</th>
+                        <th>Stage *</th>
+                        <th>Issue Method</th>
+                        <th>Material *</th>
+                        <th>Wt Calc</th>
+                        <th>Potency Corr.</th>
+                        <th>Label Claim</th>
+                        <th>Actual as per Batch</th>
+                        <th>UOM</th>
+                        <th>Req. as per Std Batch</th>
+                        <th>Precision</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>API</td><td>1</td><td>Auto</td><td>Paracetamol API</td><td>520.00</td><td>Yes</td><td>500</td><td>524.16</td><td>Kg</td><td>520.00</td><td>0.01</td></tr>
+                      <tr><td>Excipient</td><td>1</td><td>Auto</td><td>Microcrystalline Cellulose</td><td>310.00</td><td>No</td><td>-</td><td>313.10</td><td>Kg</td><td>310.00</td><td>0.01</td></tr>
+                      <tr><td>Lubricant</td><td>2</td><td>Manual</td><td>Magnesium Stearate</td><td>22.00</td><td>No</td><td>-</td><td>22.26</td><td>Kg</td><td>22.00</td><td>0.01</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="row g-2">
+                  <div class="col-md-4"><label class="form-label">Material Name *</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-2"><label class="form-label">Equivalent To</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-3"><label class="form-label">Synonyms</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-3"><label class="form-label">Function</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-8"><label class="form-label">Remarks</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-4"><label class="form-label">Std. Potency %</label><input class="form-control form-control-sm" /></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="byProduct">
+                <div class="row g-2">
+                  <div class="col-md-4"><label class="form-label">By-Product Name</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-2"><label class="form-label">Expected Qty</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-2"><label class="form-label">UOM</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-4"><label class="form-label">Handling Notes</label><input class="form-control form-control-sm" /></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="equipDetails">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm mb-0 formula-table">
+                    <thead><tr><th>Equipment Type</th><th>Equipment Code</th><th>Capacity</th><th>Setup Time</th><th>Cleaning Time</th></tr></thead>
+                    <tbody>
+                      <tr><td>RMG</td><td>RMG-03</td><td>600 Kg</td><td>30 Min</td><td>45 Min</td></tr>
+                      <tr><td>Compression</td><td>CPM-07</td><td>400K Tab/hr</td><td>20 Min</td><td>30 Min</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="ipcDetails">
+                <div class="row g-2">
+                  <div class="col-md-3"><label class="form-label">IPC Test Name</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-2"><label class="form-label">Frequency</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-2"><label class="form-label">Spec Limit</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-2"><label class="form-label">Responsible Dept</label><input class="form-control form-control-sm" /></div>
+                  <div class="col-md-3"><label class="form-label">Remarks</label><input class="form-control form-control-sm" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="fMaster"><div class="formula-card">Master formula versioning and approval data goes here.</div></div>
+          <div class="tab-pane fade" id="fTech"><div class="formula-card">Technical process ranges, CPP/CQA mapping, and validation rules go here.</div></div>
+          <div class="tab-pane fade" id="fPermission"><div class="formula-card">Product permissions and market-specific restrictions go here.</div></div>
+          <div class="tab-pane fade" id="fCharges"><div class="formula-card">Batch cost/charges (material, machine, manpower, overhead) go here.</div></div>
+          <div class="tab-pane fade" id="fPacking"><div class="formula-card">Packing material ratios, carton details, and shipper mapping go here.</div></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="status-bar">
+      <div class="status-left">
+        <span>Malay Bhalodiya</span>
+        <span>|</span>
+        <span>Role: Admin</span>
+        <span>|</span>
+        <span><span class="dot"></span> System Healthy</span>
+      </div>
+      <div class="status-right">
+        <i class="bi bi-gear-fill"></i>
+        <span>More</span>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const shell = document.getElementById('erpShell');
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      shell.classList.toggle('sidebar-collapsed');
+      const icon = toggleBtn.querySelector('i');
+      const label = toggleBtn.querySelector('.toggle-label');
+      const collapsed = shell.classList.contains('sidebar-collapsed');
+
+      icon.className = collapsed ? 'bi bi-arrow-right' : 'bi bi-arrow-left';
+      label.textContent = collapsed ? 'Expand' : 'Collapse';
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
