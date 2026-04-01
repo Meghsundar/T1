@@ -953,6 +953,15 @@ body.page-login {
   vertical-align: middle;
 }
 
+.page-coa .coa-table tbody td {
+  min-height: 64px;
+}
+
+.page-coa .coa-table textarea.form-control {
+  min-height: 56px;
+  resize: vertical;
+}
+
 .page-coa .coa-table thead th {
   background: #edf3fc;
   color: #254372;
