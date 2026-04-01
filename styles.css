@@ -837,3 +837,73 @@ body.page-login {
   background: #edf3fc;
   color: #254372;
 }
+
+/* Formula master page styles */
+.page-formula .formula-main {
+  background: #f6f8fc;
+}
+
+.page-formula .formula-wrap {
+  padding: 12px 18px;
+  overflow: auto;
+  flex: 1;
+}
+
+.page-formula .formula-card {
+  background: #fff;
+  border: 1px solid var(--erp-border);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.page-formula .formula-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2b446f;
+  margin-bottom: 8px;
+}
+
+.page-formula .form-label {
+  font-size: 0.78rem;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: #29416a;
+}
+
+.page-formula .form-control,
+.page-formula .form-select {
+  font-size: 0.8rem;
+  min-height: 30px;
+}
+
+.page-formula .formula-tabs .nav-link,
+.page-formula .formula-subtabs .nav-link {
+  font-size: 0.84rem;
+  padding: 6px 12px;
+}
+
+.page-formula .formula-tab-content,
+.page-formula .formula-sub-content {
+  background: #fff;
+  border: 1px solid var(--erp-border);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  padding: 10px;
+}
+
+.page-formula .formula-sub-content {
+  margin-top: 0;
+}
+
+.page-formula .formula-table th,
+.page-formula .formula-table td {
+  font-size: 0.77rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.page-formula .formula-table thead th {
+  background: #edf3fc;
+  color: #254372;
+}
