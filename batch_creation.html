@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharma ERP - Batch Creation</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-batch">
+  <div class="erp-shell" id="erpShell">
+    <aside class="erp-sidebar">
+      <div class="brand">
+        <i class="bi bi-capsule-pill"></i>
+        <span class="brand-name">Pharma ERP</span>
+      </div>
+
+      <nav class="menu-wrap">
+        <button class="menu-link"><i class="bi bi-speedometer2"></i><span class="menu-text">Dashboard</span></button>
+        <button class="menu-link active submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuProduction"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <div class="submenu-list collapse show" id="submenuProduction">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Production Planning</span></button>
+          <button class="submenu-link active"><i class="bi bi-dot"></i><span class="menu-text">Batch Creation</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-clipboard2-pulse"></i><span class="menu-text">Quality Control</span></button>
+        <button class="menu-link"><i class="bi bi-shield-check"></i><span class="menu-text">Quality Assurance</span></button>
+        <button class="menu-link submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuInventory"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <div class="submenu-list collapse" id="submenuInventory">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Raw Materials</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Finished Goods</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-truck"></i><span class="menu-text">Distribution</span></button>
+        <button class="menu-link"><i class="bi bi-cash-stack"></i><span class="menu-text">Accounts</span></button>
+        <button class="menu-link"><i class="bi bi-people"></i><span class="menu-text">CRM / Clients</span></button>
+        <button class="menu-link"><i class="bi bi-sliders"></i><span class="menu-text">Settings</span></button>
+      </nav>
+
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" title="Collapse / expand menu">
+        <i class="bi bi-arrow-left"></i>
+        <span class="toggle-label">Collapse</span>
+      </button>
+    </aside>
+
+    <main class="erp-main batch-main">
+      <div class="content-header d-flex justify-content-between align-items-center">
+        <div>Batch Creation <span class="sub">/ General & Batch Details</span></div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-files"></i> Copy From Plan</button>
+          <button class="btn btn-success btn-sm"><i class="bi bi-check2-circle"></i> Approve Batch</button>
+        </div>
+      </div>
+
+      <div class="batch-wrap">
+        <div class="batch-card">
+          <div class="row g-2 align-items-end">
+            <div class="col-md-2"><label class="form-label">Location *</label><select class="form-select form-select-sm"><option>GENERAL</option></select></div>
+            <div class="col-md-2"><label class="form-label">Company *</label><select class="form-select form-select-sm"><option>SALVAVIDA</option></select></div>
+            <div class="col-md-2"><label class="form-label">Batch Type *</label><select class="form-select form-select-sm"><option>Production</option><option>Repacking</option></select></div>
+            <div class="col-md-2"><label class="form-label">Date *</label><input type="date" class="form-control form-control-sm" value="2026-04-01" /></div>
+            <div class="col-md-2"><label class="form-label">Daily Plan ID</label><input class="form-control form-control-sm" value="DP-1042" /></div>
+            <div class="col-md-2"><label class="form-label">Status</label><input class="form-control form-control-sm text-success fw-bold" value="APPROVED" /></div>
+
+            <div class="col-md-2"><label class="form-label">Product Name *</label><input class="form-control form-control-sm" value="CO-TRIMOXAZOLE TABLET 480 MG" /></div>
+            <div class="col-md-2"><label class="form-label">Generic Name</label><input class="form-control form-control-sm" value="CO-TRIMOXAZOLE TABLETS BP 480MG" /></div>
+            <div class="col-md-2"><label class="form-label">Plan No. *</label><input class="form-control form-control-sm" value="LV00013" /></div>
+            <div class="col-md-2"><label class="form-label">Item Type *</label><select class="form-select form-select-sm"><option>SF</option><option>FG</option></select></div>
+            <div class="col-md-2"><label class="form-label">Category Type</label><select class="form-select form-select-sm"><option>BLK</option></select></div>
+            <div class="col-md-2"><label class="form-label">Marketed By</label><input class="form-control form-control-sm" value="SALVAVIDA" /></div>
+          </div>
+        </div>
+
+        <ul class="nav nav-tabs batch-tabs" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabGeneral" type="button">General</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabBatchDetails" type="button">Batch Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabResidue" type="button">Residue Batch</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabTransfer" type="button">Transfer / Yield</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabRelease" type="button">Release Tracking</button></li>
+        </ul>
+
+        <div class="tab-content batch-tab-content">
+          <div class="tab-pane fade show active" id="tabGeneral">
+            <div class="row g-2">
+              <div class="col-md-2"><label class="form-label">Series</label><input class="form-control form-control-sm" value="2026" /></div>
+              <div class="col-md-2"><label class="form-label">Batch No. *</label><input class="form-control form-control-sm" value="LV01GT2601" /></div>
+              <div class="col-md-2"><label class="form-label">Master Card No. *</label><input class="form-control form-control-sm" value="MFR/LV07/TRIM/00" /></div>
+              <div class="col-md-1"><label class="form-label">Version</label><input class="form-control form-control-sm" value="000" /></div>
+              <div class="col-md-1"><label class="form-label">Revision</label><input class="form-control form-control-sm" value="0" /></div>
+              <div class="col-md-2"><label class="form-label">MFR No. & Rev.</label><input class="form-control form-control-sm" value="MFR-001/0" /></div>
+              <div class="col-md-2"><label class="form-label">BMR No. & Rev.</label><input class="form-control form-control-sm" value="BMR-009/1" /></div>
+
+              <div class="col-md-2"><label class="form-label">Mfg Date *</label><input type="date" class="form-control form-control-sm" value="2026-01-01" /></div>
+              <div class="col-md-2"><label class="form-label">Exp Date *</label><input type="month" class="form-control form-control-sm" value="2028-12" /></div>
+              <div class="col-md-2"><label class="form-label">Best Before</label><input type="month" class="form-control form-control-sm" value="2028-12" /></div>
+              <div class="col-md-2"><label class="form-label">Shelf Life</label><div class="input-group input-group-sm"><input class="form-control" value="36" /><span class="input-group-text">Months</span></div></div>
+              <div class="col-md-2"><label class="form-label">Batch Size *</label><div class="input-group input-group-sm"><input class="form-control" value="400000" /><span class="input-group-text">Tab</span></div></div>
+              <div class="col-md-2"><label class="form-label">Planned Pack Qty</label><div class="input-group input-group-sm"><input class="form-control" value="400000" /><span class="input-group-text">Tab</span></div></div>
+
+              <div class="col-md-2"><label class="form-label">Deviation No.</label><input class="form-control form-control-sm" placeholder="If any" /></div>
+              <div class="col-md-2"><label class="form-label">MRP</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">PTR</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">PTS</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">TRP</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">Remarks (Batch)</label><input class="form-control form-control-sm" /></div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tabBatchDetails">
+            <div class="table-responsive">
+              <table class="table table-bordered table-sm mb-0 batch-table">
+                <thead>
+                  <tr>
+                    <th>Stage *</th>
+                    <th>Machine *</th>
+                    <th>Start Date/Time *</th>
+                    <th>End Date/Time *</th>
+                    <th>Operator *</th>
+                    <th>Checked By</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Granulation</td><td>RMG-03</td><td>2026-04-01 08:00</td><td>2026-04-01 14:00</td><td>A. Kumar</td><td>P. Patel</td><td class="text-primary">In Process</td></tr>
+                  <tr><td>Compression</td><td>CPM-07</td><td>2026-04-02 07:00</td><td>2026-04-02 18:00</td><td>R. Singh</td><td>P. Patel</td><td>Planned</td></tr>
+                  <tr><td>Packing</td><td>PKL-02</td><td>2026-04-03 09:00</td><td>2026-04-03 20:00</td><td>S. Solanki</td><td>QA Team</td><td>Planned</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tabResidue">
+            <div class="row g-2">
+              <div class="col-md-2"><label class="form-label">Residue Batch No. *</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">R.R Qty</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">Mfg Date</label><input type="date" class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">Exp Date</label><input type="date" class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">Process Completed</label><input class="form-control form-control-sm" /></div>
+              <div class="col-md-2"><label class="form-label">Total Batch Size</label><input class="form-control form-control-sm" value="400000" /></div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tabTransfer">
+            <div class="row g-2">
+              <div class="col-md-3"><label class="form-label">Transfer From Production (%)</label><div class="input-group input-group-sm"><input class="form-control" value="100.0" /><span class="input-group-text">%</span></div></div>
+              <div class="col-md-3"><label class="form-label">Transfer From Qty</label><div class="input-group input-group-sm"><input class="form-control" value="400091" /><span class="input-group-text">Tab</span></div></div>
+              <div class="col-md-3"><label class="form-label">Transfer To Trading (%)</label><div class="input-group input-group-sm"><input class="form-control" value="0.0" /><span class="input-group-text">%</span></div></div>
+              <div class="col-md-3"><label class="form-label">Transfer To Semi FG (%)</label><div class="input-group input-group-sm"><input class="form-control" value="100.0" /><span class="input-group-text">%</span></div></div>
+
+              <div class="col-md-3"><label class="form-label">Yield (%)</label><div class="input-group input-group-sm"><input class="form-control" value="98.9" /><span class="input-group-text">%</span></div></div>
+              <div class="col-md-3"><label class="form-label">Mfg Loss (%)</label><div class="input-group input-group-sm"><input class="form-control" value="0.6" /><span class="input-group-text">%</span></div></div>
+              <div class="col-md-3"><label class="form-label">Sample Qty</label><div class="input-group input-group-sm"><input class="form-control" value="91" /><span class="input-group-text">Tab</span></div></div>
+              <div class="col-md-3"><label class="form-label">Testing Qty</label><div class="input-group input-group-sm"><input class="form-control" value="91" /><span class="input-group-text">Tab</span></div></div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tabRelease">
+            <div class="row g-2">
+              <div class="col-md-3"><label class="form-label">Date of Completion</label><input type="date" class="form-control form-control-sm" /></div>
+              <div class="col-md-3"><label class="form-label">Q.A Release Date</label><input type="date" class="form-control form-control-sm" /></div>
+              <div class="col-md-3"><label class="form-label">Bulk Release Date</label><input type="date" class="form-control form-control-sm" /></div>
+              <div class="col-md-3"><label class="form-label">Current Stage</label><select class="form-select form-select-sm"><option>Under Process</option><option>Released</option></select></div>
+              <div class="col-12"><label class="form-label">Release Remarks</label><textarea rows="2" class="form-control form-control-sm" placeholder="QA observations, deviations, corrective actions"></textarea></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="status-bar">
+      <div class="status-left">
+        <span>Malay Bhalodiya</span>
+        <span>|</span>
+        <span>Role: Admin</span>
+        <span>|</span>
+        <span><span class="dot"></span> System Healthy</span>
+      </div>
+      <div class="status-right">
+        <i class="bi bi-gear-fill"></i>
+        <span>More</span>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const shell = document.getElementById('erpShell');
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      shell.classList.toggle('sidebar-collapsed');
+      const icon = toggleBtn.querySelector('i');
+      const label = toggleBtn.querySelector('.toggle-label');
+      const collapsed = shell.classList.contains('sidebar-collapsed');
+
+      icon.className = collapsed ? 'bi bi-arrow-right' : 'bi bi-arrow-left';
+      label.textContent = collapsed ? 'Expand' : 'Collapse';
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharma ERP Wireframe</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="erp-shell" id="erpShell">
+    <!-- Left Sidebar -->
+    <aside class="erp-sidebar">
+      <div class="brand">
+        <i class="bi bi-capsule-pill"></i>
+        <span class="brand-name">Pharma ERP</span>
+      </div>
+
+      <nav class="menu-wrap">
+        <button class="menu-link"><i class="bi bi-speedometer2"></i><span class="menu-text">Dashboard</span></button>
+        <button class="menu-link submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuProduction"><i class="bi bi-gear-wide-connected"></i><span class="menu-text">Production</span></button>
+        <div class="submenu-list collapse" id="submenuProduction">
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Production Planning</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Batch Execution</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-clipboard2-pulse"></i><span class="menu-text">Quality Control</span></button>
+        <button class="menu-link"><i class="bi bi-shield-check"></i><span class="menu-text">Quality Assurance</span></button>
+        <button class="menu-link active submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenuInventory"><i class="bi bi-box-seam"></i><span class="menu-text">Inventory</span></button>
+        <div class="submenu-list collapse show" id="submenuInventory">
+          <button class="submenu-link active"><i class="bi bi-dot"></i><span class="menu-text">Raw Materials</span></button>
+          <button class="submenu-link"><i class="bi bi-dot"></i><span class="menu-text">Finished Goods</span></button>
+        </div>
+        <button class="menu-link"><i class="bi bi-truck"></i><span class="menu-text">Distribution</span></button>
+        <button class="menu-link"><i class="bi bi-cash-stack"></i><span class="menu-text">Accounts</span></button>
+        <button class="menu-link"><i class="bi bi-people"></i><span class="menu-text">CRM / Clients</span></button>
+        <button class="menu-link"><i class="bi bi-sliders"></i><span class="menu-text">Settings</span></button>
+      </nav>
+
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" title="Collapse / expand menu">
+        <i class="bi bi-arrow-left"></i>
+        <span class="toggle-label">Collapse</span>
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="erp-main">
+      <div class="content-header">
+        Inventory <span class="sub">/ Raw Materials</span>
+      </div>
+
+      <div class="content-body">
+        <div class="toolbar">
+          <button class="btn btn-success btn-sm"><i class="bi bi-plus-lg"></i> Add Material</button>
+          <button class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i> Export</button>
+          <button class="btn btn-outline-primary btn-sm"><i class="bi bi-funnel"></i> Filter</button>
+        </div>
+
+        <div class="filter-panel">
+          <div class="row g-2 align-items-center">
+            <div class="col-md-4"><input class="form-control form-control-sm" placeholder="Search..." /></div>
+            <div class="col-md-3"><select class="form-select form-select-sm"><option>Status: All</option></select></div>
+            <div class="col-md-auto"><button class="btn btn-primary btn-sm px-3">Apply</button></div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle bg-white">
+            <thead>
+              <tr>
+                <th>Item Name</th>
+                <th>Batch</th>
+                <th>Quantity</th>
+                <th>Expiry Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>API-001</td><td>B123</td><td>500 kg</td><td>2026-05-12</td><td class="text-success">In Stock</td></tr>
+              <tr><td>Excipient-X</td><td>B456</td><td>300 kg</td><td>2025-11-08</td><td class="text-warning">Pending</td></tr>
+              <tr><td>Binder-Y</td><td>B789</td><td>150 kg</td><td>2024-08-20</td><td class="text-success">In Stock</td></tr>
+              <tr><td>API-002</td><td>B234</td><td>200 kg</td><td>2024-12-15</td><td class="text-danger">Expired</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Status Bar -->
+    <footer class="status-bar">
+      <div class="status-left">
+        <span>Malay Bhalodiya</span>
+        <span>|</span>
+        <span>Role: Admin</span>
+        <span>|</span>
+        <span><span class="dot"></span> System Healthy</span>
+      </div>
+      <div class="status-right">
+        <i class="bi bi-gear-fill"></i>
+        <span>More</span>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const shell = document.getElementById('erpShell');
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      shell.classList.toggle('sidebar-collapsed');
+      const icon = toggleBtn.querySelector('i');
+      const label = toggleBtn.querySelector('.toggle-label');
+      const collapsed = shell.classList.contains('sidebar-collapsed');
+
+      icon.className = collapsed ? 'bi bi-arrow-right' : 'bi bi-arrow-left';
+      label.textContent = collapsed ? 'Expand' : 'Collapse';
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
