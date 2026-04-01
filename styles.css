@@ -907,3 +907,54 @@ body.page-login {
   background: #edf3fc;
   color: #254372;
 }
+
+/* COA page styles */
+.page-coa .coa-main {
+  background: #f6f8fc;
+}
+
+.page-coa .coa-wrap {
+  padding: 12px 18px;
+  overflow: auto;
+  flex: 1;
+}
+
+.page-coa .coa-card {
+  background: #fff;
+  border: 1px solid var(--erp-border);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.page-coa .coa-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2b446f;
+  margin-bottom: 8px;
+}
+
+.page-coa .form-label {
+  font-size: 0.78rem;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: #29416a;
+}
+
+.page-coa .form-control,
+.page-coa .form-select {
+  font-size: 0.8rem;
+  min-height: 30px;
+}
+
+.page-coa .coa-table th,
+.page-coa .coa-table td {
+  font-size: 0.77rem;
+  vertical-align: middle;
+}
+
+.page-coa .coa-table thead th {
+  background: #edf3fc;
+  color: #254372;
+  white-space: nowrap;
+}
